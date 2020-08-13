@@ -1,0 +1,17 @@
+build
+coverage
+.cache
+package.json
+package-lock.json
+public
+
+# Typescript definitions
+*.d.ts
+
+# CDK
+#
+.cdk.staging
+cdk.out
+
+# markdown
+*.md
