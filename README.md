@@ -48,3 +48,4 @@ export class AppStack extends Stack {
 - `staticSiteEntry` - Entry point for your static site, most of the time this is your `index.html`
 - `bucketProps` - Additional options for the S3 bucket. See [CDK BucketProps](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-s3.BucketProps.html)
 - `cloudfrontProps` - Additional options for the Cloudfront distribution. See [CDK CloudfrontProps](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-cloudfront.CloudFrontWebDistributionProps.html)
+- `originAccessIdentity` - An originAccessIdentity for cloudfront to use to access s3 bucket contents. See [OriginAccessIdentity](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-cloudfront.OriginAccessIdentity.html)
