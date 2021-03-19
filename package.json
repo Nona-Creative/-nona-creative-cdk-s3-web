@@ -1,6 +1,6 @@
 {
-  "name": "@nona-creative/cdk-s3-web",
-  "version": "0.0.2",
+  "name": "@nona-creative/aws-cdk-s3",
+  "version": "0.2.1",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
@@ -8,7 +8,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.47.0",
+    "@aws-cdk/assert": "1.56.0",
     "@types/jest": "^25.2.1",
     "@types/node": "10.17.5",
     "@types/ramda": "0.27.11",
@@ -17,12 +17,12 @@
     "typescript": "^3.9.7"
   },
   "peerDependencies": {
-    "@aws-cdk/core": "1.47.0"
+    "@aws-cdk/core": "1.56.0"
   },
   "dependencies": {
-    "@aws-cdk/core": "1.47.0",
-    "@aws-cdk/aws-s3-deployment": "1.47.0",
-    "@aws-cdk/aws-cloudfront": "1.47.0",
+    "@aws-cdk/core": "1.56.0",
+    "@aws-cdk/aws-s3-deployment": "1.56.0",
+    "@aws-cdk/aws-cloudfront": "1.56.0",
     "ramda": "0.27.0"
   }
 }

@@ -1,7 +1,7 @@
 import { Construct, CfnOutput, RemovalPolicy } from '@aws-cdk/core'
 import { IBucket, Bucket, BucketProps } from '@aws-cdk/aws-s3'
 import { BucketDeployment, Source } from '@aws-cdk/aws-s3-deployment'
-import { CloudFrontWebDistribution, CloudFrontWebDistributionProps } from '@aws-cdk/aws-cloudfront'
+import { CloudFrontWebDistribution, CloudFrontWebDistributionProps, OriginAccessIdentity } from '@aws-cdk/aws-cloudfront'
 import { mergeRight } from 'ramda'
 
 export interface S3WebUiProps {
@@ -30,6 +30,11 @@ export interface S3WebUiProps {
    * @default - { behaviors: [{ isDefaultBehavior: true }] }
    */
   cloudfrontProps?: Omit<CloudFrontWebDistributionProps, 'originConfigs'>
+
+  /**
+   * Origin Access Identity for your s3 origin
+   */
+  originAccessIdentity?: OriginAccessIdentity
 }
 
 export class S3WebUI extends Construct {
@@ -41,7 +46,7 @@ export class S3WebUI extends Construct {
   constructor(scope: Construct, id: string, props: S3WebUiProps) {
     super(scope, id)
 
-    const { bucketName, staticSiteBuildPath, staticSiteEntry, bucketProps, cloudfrontProps } = props
+    const { bucketName, staticSiteBuildPath, staticSiteEntry, bucketProps, cloudfrontProps, originAccessIdentity } = props
 
     const defaultBucketProps: BucketProps = {
       bucketName,
@@ -63,6 +68,7 @@ export class S3WebUI extends Construct {
         {
           s3OriginSource: {
             s3BucketSource: this.s3Bucket,
+            originAccessIdentity,
           },
           behaviors: [{ isDefaultBehavior: true }],
         },
