@@ -1,6 +1,6 @@
 {
-  "name": "@nona-creative/cdk-s3-web",
-  "version": "0.0.2",
+  "name": "@nona-creative/aws-cdk-s3",
+  "version": "0.2.1",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
